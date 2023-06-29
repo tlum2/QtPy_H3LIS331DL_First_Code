@@ -3,11 +3,9 @@
 // How many internal neopixels do we have? some boards have more than one!
 #define NUMPIXELS        1
 
-//Adafruit_NeoPixel pixels(NUMPIXELS, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
-
 // Which pin on the Arduino is connected to the NeoPixels?
 // On a Trinket or Gemma we suggest changing this to 1:
-#define LED_PIN     18
+#define LED_PIN     15
 
 // How many NeoPixels are attached to the Arduino?
 #define LED_COUNT  1
@@ -41,7 +39,7 @@ void setup()
   strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
   strip.show();            // Turn OFF all pixels ASAP
   strip.setBrightness(BRIGHTNESS);
-  // put your setup code here, to run once:
+
   pinMode(20,INPUT);       // Interrupt pin input
   Wire.begin();
   xl.setI2CAddr(0x19);    // This MUST be called BEFORE .begin() so 
@@ -89,8 +87,6 @@ void setup()
   digitalWrite(NEOPIXEL_POWER, HIGH);
 #endif
 
- // pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
-  //pixels.setBrightness(20); // not so bright
 }
 
 void loop() 
